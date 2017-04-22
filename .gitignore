@@ -1,0 +1,7 @@
+*.pyc
+.idea/*
+config_email.py
+config_social.py
+config_cache.py
+*/media/*
+media/*
