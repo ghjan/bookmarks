@@ -121,7 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#media路径设置，debug环境下面使用media_root作为MEDIA_URL对应的位置
+# media路径设置，debug环境下面使用media_root作为MEDIA_URL对应的位置
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
@@ -145,31 +145,11 @@ AUTHENTICATION_BACKENDS = (
     'account.authentication.EmailAuthBackend',
 )
 
-
-SOCIAL_AUTH_FACEBOOK_KEY = ''
-SOCIAL_AUTH_FACEBOOK_SECRET = ''
-
-SOCIAL_AUTH_TWITTER_KEY = ''
-SOCIAL_AUTH_TWITTER_SECRET = ''
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '798468237041-s50j8o6v6ml2h76sohopjd5dchchilfi.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'G-YSfsA94zHQOLlrH0lzjIq2'
-
+# social auth
+from .config_social import *
 
 # Mail server config
-# from config_email import *
-#use this in development, it can print the email info to console
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-SERVER_EMAIL = 'cajan2@sina.com'
-EMAIL_HOST = 'smtp.sina.com'
-EMAIL_HOST_USER = 'cajan2@sina.com'
-EMAIL_HOST_PASSWORD = 'iamwbjan1'# 'iamsSnjan1='
-EMAIL_PORT = 25
-EMAIL_USE_TLS = False
-DEFAULT_CHARSET = 'utf-8'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+from .config_email import *
 
-REDIS_HOST = 'localhost'
-REDIS_PORT = 6379
-REDIS_DB = 0
-REDIS_PASSWORD = "DhG7n&5q"
+# CACHE CONFIG
+from .config_cache import *
